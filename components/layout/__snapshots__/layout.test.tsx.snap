@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout matches the snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="fixed h-[72px] w-full z-30 flex justify-center items-center bg-white"
+      >
+        <img
+          alt="Xceed main logo"
+          class="rounded-none overflow-hidden"
+          data-nimg="1"
+          decoding="async"
+          height="24"
+          loading="lazy"
+          src="/icons/main-logo.svg"
+          style="color: transparent;"
+          width="96"
+        />
+      </header>
+      <div
+        class="pt-[72px] relative"
+      >
+        Test Content
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="fixed h-[72px] w-full z-30 flex justify-center items-center bg-white"
+    >
+      <img
+        alt="Xceed main logo"
+        class="rounded-none overflow-hidden"
+        data-nimg="1"
+        decoding="async"
+        height="24"
+        loading="lazy"
+        src="/icons/main-logo.svg"
+        style="color: transparent;"
+        width="96"
+      />
+    </header>
+    <div
+      class="pt-[72px] relative"
+    >
+      Test Content
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders correctly 1`] = `
+<div>
+  <div
+    class="flex flex-col"
+  >
+    <div
+      class="flex justify-between items-center"
+    >
+      <div
+        class="flex items-center gap-x-[31px]"
+      >
+        <div
+          class="flex justify-center items-center rounded-full w-[72px] h-[72px] bg-gray-200"
+        >
+          <img
+            alt="play"
+            class="rounded-none overflow-hidden"
+            data-nimg="1"
+            decoding="async"
+            height="19"
+            loading="lazy"
+            src="/icons/play.svg"
+            style="color: transparent;"
+            width="15"
+          />
+        </div>
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="hidden lg:flex"
+          >
+            <div
+              class="pr-4"
+            >
+              <p
+                class="whitespace-pre-line font-avenirHeavy font-black text-white"
+              >
+                ARTIST
+              </p>
+            </div>
+            <div
+              class="flex"
+            >
+              <p
+                class="whitespace-pre-line  text-white"
+              >
+                TEST
+              </p>
+              <div
+                class="px-1.5"
+              >
+                <p
+                  class="whitespace-pre-line  text-white"
+                >
+                  -
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex"
+            >
+              <p
+                class="whitespace-pre-line  text-white"
+              >
+                TEST2
+              </p>
+            </div>
+          </div>
+          <h1
+            class="text-4xl
+          font-avenirHeavy font-black
+          text-white"
+          >
+            test
+          </h1>
+        </div>
+      </div>
+      <div
+        class="hidden h-full lg:flex flex-col gap-y-[7px] pr-[137px]"
+      >
+        <img
+          alt="website"
+          class="rounded-none overflow-hidden"
+          data-nimg="1"
+          decoding="async"
+          height="16"
+          loading="lazy"
+          src="/icons/website.svg"
+          style="color: transparent;"
+          width="16"
+        />
+        <img
+          alt="spotify"
+          class="rounded-none overflow-hidden"
+          data-nimg="1"
+          decoding="async"
+          height="16"
+          loading="lazy"
+          src="/icons/spotify.svg"
+          style="color: transparent;"
+          width="16"
+        />
+        <img
+          alt="soundcloud"
+          class="rounded-none overflow-hidden"
+          data-nimg="1"
+          decoding="async"
+          height="16"
+          loading="lazy"
+          src="/icons/soundcloud.svg"
+          style="color: transparent;"
+          width="16"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

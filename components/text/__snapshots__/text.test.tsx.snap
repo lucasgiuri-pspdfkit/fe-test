@@ -1,0 +1,403 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Snapshot with type h1 1`] = `
+<div>
+  <h1
+    class="text-4xl
+          
+          text-gray-500"
+  >
+    test
+  </h1>
+</div>
+`;
+
+exports[`Text Snapshot with type h1 and custom id 1`] = `
+<div>
+  <h1
+    class="text-4xl
+          
+          text-gray-500"
+  >
+    test
+  </h1>
+</div>
+`;
+
+exports[`Text Snapshot with type h1 and isBold true 1`] = `
+<div>
+  <h1
+    class="text-4xl
+          font-avenirHeavy font-black
+          text-gray-500"
+  >
+    test
+  </h1>
+</div>
+`;
+
+exports[`Text Snapshot with type h1 and isWhite true 1`] = `
+<div>
+  <h1
+    class="text-4xl
+          
+          text-white"
+  >
+    test
+  </h1>
+</div>
+`;
+
+exports[`Text Snapshot with type h2 1`] = `
+<div>
+  <h2
+    class="text-3xl
+      
+      text-gray-500"
+  >
+    test
+  </h2>
+</div>
+`;
+
+exports[`Text Snapshot with type h2 and custom id 1`] = `
+<div>
+  <h2
+    class="text-3xl
+      
+      text-gray-500"
+  >
+    test
+  </h2>
+</div>
+`;
+
+exports[`Text Snapshot with type h2 and isBold true 1`] = `
+<div>
+  <h2
+    class="text-3xl
+      font-avenirHeavy font-black
+      text-gray-500"
+  >
+    test
+  </h2>
+</div>
+`;
+
+exports[`Text Snapshot with type h2 and isWhite true 1`] = `
+<div>
+  <h2
+    class="text-3xl
+      
+      text-white"
+  >
+    test
+  </h2>
+</div>
+`;
+
+exports[`Text Snapshot with type h3 1`] = `
+<div>
+  <h3
+    class="text-2xl
+        
+        text-gray-500"
+  >
+    test
+  </h3>
+</div>
+`;
+
+exports[`Text Snapshot with type h3 and custom id 1`] = `
+<div>
+  <h3
+    class="text-2xl
+        
+        text-gray-500"
+  >
+    test
+  </h3>
+</div>
+`;
+
+exports[`Text Snapshot with type h3 and isBold true 1`] = `
+<div>
+  <h3
+    class="text-2xl
+        font-avenirHeavy font-black
+        text-gray-500"
+  >
+    test
+  </h3>
+</div>
+`;
+
+exports[`Text Snapshot with type h3 and isWhite true 1`] = `
+<div>
+  <h3
+    class="text-2xl
+        
+        text-white"
+  >
+    test
+  </h3>
+</div>
+`;
+
+exports[`Text Snapshot with type h4 1`] = `
+<div>
+  <h4
+    class="text-lg
+      
+      text-gray-500"
+  >
+    test
+  </h4>
+</div>
+`;
+
+exports[`Text Snapshot with type h4 and custom id 1`] = `
+<div>
+  <h4
+    class="text-lg
+      
+      text-gray-500"
+  >
+    test
+  </h4>
+</div>
+`;
+
+exports[`Text Snapshot with type h4 and isBold true 1`] = `
+<div>
+  <h4
+    class="text-lg
+      font-avenirHeavy font-black
+      text-gray-500"
+  >
+    test
+  </h4>
+</div>
+`;
+
+exports[`Text Snapshot with type h4 and isWhite true 1`] = `
+<div>
+  <h4
+    class="text-lg
+      
+      text-white"
+  >
+    test
+  </h4>
+</div>
+`;
+
+exports[`Text Snapshot with type label 1`] = `
+<div>
+  <label
+    class="font-avenirHeavy text-gray-500"
+  >
+    test
+  </label>
+</div>
+`;
+
+exports[`Text Snapshot with type label and custom id 1`] = `
+<div>
+  <label
+    class="font-avenirHeavy text-gray-500"
+    for="custom"
+  >
+    test
+  </label>
+</div>
+`;
+
+exports[`Text Snapshot with type label and isBold true 1`] = `
+<div>
+  <label
+    class="font-avenirHeavy text-gray-500"
+  >
+    test
+  </label>
+</div>
+`;
+
+exports[`Text Snapshot with type label and isWhite true 1`] = `
+<div>
+  <label
+    class="font-avenirHeavy text-gray-500"
+  >
+    test
+  </label>
+</div>
+`;
+
+exports[`Text Snapshot with type p 1`] = `
+<div>
+  <p
+    class="whitespace-pre-line  text-gray-500"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type p and custom id 1`] = `
+<div>
+  <p
+    class="whitespace-pre-line  text-gray-500"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type p and isBold true 1`] = `
+<div>
+  <p
+    class="whitespace-pre-line font-avenirHeavy font-black text-gray-500"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type p and isWhite true 1`] = `
+<div>
+  <p
+    class="whitespace-pre-line  text-white"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type smallP 1`] = `
+<div>
+  <p
+    class="text-sm
+          
+          text-gray-300"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type smallP and custom id 1`] = `
+<div>
+  <p
+    class="text-sm
+          
+          text-gray-300"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type smallP and isBold true 1`] = `
+<div>
+  <p
+    class="text-sm
+          font-avenirHeavy font-black
+          text-gray-300"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type smallP and isWhite true 1`] = `
+<div>
+  <p
+    class="text-sm
+          
+          text-white"
+  >
+    test
+  </p>
+</div>
+`;
+
+exports[`Text Snapshot with type span 1`] = `
+<div>
+  <span
+    class="text-gray-100 font-avenirHeavy"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`Text Snapshot with type span and custom id 1`] = `
+<div>
+  <span
+    class="text-gray-100 font-avenirHeavy"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`Text Snapshot with type span and isBold true 1`] = `
+<div>
+  <span
+    class="text-gray-100 font-avenirHeavy"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`Text Snapshot with type span and isWhite true 1`] = `
+<div>
+  <span
+    class="text-gray-100 font-avenirHeavy"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`Text Snapshot with type subLabel 1`] = `
+<div>
+  <label
+    class="text-gray-500 text-sm font-medium"
+  >
+    test
+  </label>
+</div>
+`;
+
+exports[`Text Snapshot with type subLabel and custom id 1`] = `
+<div>
+  <label
+    class="text-gray-500 text-sm font-medium"
+    for="custom"
+  >
+    test
+  </label>
+</div>
+`;
+
+exports[`Text Snapshot with type subLabel and isBold true 1`] = `
+<div>
+  <label
+    class="text-gray-500 text-sm font-medium"
+  >
+    test
+  </label>
+</div>
+`;
+
+exports[`Text Snapshot with type subLabel and isWhite true 1`] = `
+<div>
+  <label
+    class="text-gray-500 text-sm font-medium"
+  >
+    test
+  </label>
+</div>
+`;

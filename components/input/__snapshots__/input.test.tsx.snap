@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Snapshot with empty placeholder and empty value 1`] = `
+<div>
+  <input
+    class="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
+    placeholder=""
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Input Snapshot with label 1`] = `
+<div>
+  <div
+    class="flex flex-col w-full gap-y-2"
+  >
+    <label
+      class="text-gray-500 text-sm font-medium"
+    >
+      label test
+    </label>
+    <input
+      class="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
+      placeholder="placeholder test"
+      type="text"
+      value="value test"
+    />
+  </div>
+</div>
+`;
+
+exports[`Input Snapshot with type email 1`] = `
+<div>
+  <input
+    class="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
+    placeholder="placeholder test"
+    type="text"
+    value="value test"
+  />
+</div>
+`;
+
+exports[`Input Snapshot with type password 1`] = `
+<div>
+  <input
+    class="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
+    placeholder="placeholder test"
+    type="text"
+    value="value test"
+  />
+</div>
+`;
+
+exports[`Input Snapshot with type text 1`] = `
+<div>
+  <input
+    class="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
+    placeholder="placeholder test"
+    type="text"
+    value="value test"
+  />
+</div>
+`;

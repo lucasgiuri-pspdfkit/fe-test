@@ -1,5 +1,5 @@
 import List, { availableListTypes } from "./list";
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 
 const arrayWithOneItem = [
   {
@@ -79,6 +79,19 @@ describe("List", () => {
       <List type={availableListTypes.row} items={arrayWithOneItem} />
     );
     expect(view).toMatchSnapshot();
+  });
+
+  it("onClick is called when clicking on an item", () => {
+    const onClick = jest.fn();
+    const { getByText } = render(
+      <List
+        type={availableListTypes.row}
+        items={arrayWithOneItem}
+        onClick={onClick}
+      />
+    );
+    fireEvent.click(getByText("example"));
+    expect(onClick).toHaveBeenCalled();
   });
 
   it("Snapshot renders with five items and row", () => {

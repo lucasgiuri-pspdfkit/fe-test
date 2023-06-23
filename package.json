@@ -6,6 +6,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
+    "test:coverage": "jest --coverage --watchAll",
     "build:storybook": "build-storybook -s public",
     "serve:storybook": "serve storybook-static",
     "storybook": "start-storybook -p 6006 -s public"

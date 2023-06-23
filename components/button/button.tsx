@@ -20,7 +20,7 @@ export const availableButtonTypes = {
 type AvailableButtonVariants = typeof availableVariants;
 type AvailableButtonTypes = typeof availableButtonTypes;
 
-type ButtonProps = {
+export type ButtonProps = {
   children?: React.ReactNode;
   text?: string;
   type?: keyof AvailableButtonTypes;
@@ -46,7 +46,8 @@ const Button = ({
       classes = "bg-blue-100 text-white font-avenirHeavy py-3 px-7 rounded-lg";
       break;
     case availableVariants.secondary:
-      classes = "bg-gray-400 text-gray-300 font-avenirHeavy py-3 px-7 rounded-lg";
+      classes =
+        "bg-gray-400 text-gray-300 font-avenirHeavy py-3 px-7 rounded-lg";
       break;
     case availableVariants.tertiary:
       classes = `${

@@ -11,7 +11,7 @@ export const availableRoundedSizes = {
 
 type AvailableRoundedSizeTypes = typeof availableRoundedSizes;
 
-type ImageComponentProps = {
+export type ImageComponentProps = {
   src: string;
   roundedSize?: keyof AvailableRoundedSizeTypes;
   width?: number;

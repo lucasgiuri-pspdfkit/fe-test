@@ -52,7 +52,7 @@ const Card = ({ name, musicGenres }: Card) => {
             <Text type={availableTextTypes.h1} text={name} isBold isWhite />
           </div>
         </div>
-        <div className="hidden h-full lg:flex flex-col gap-y-[7px] pr-[137px]">
+        <div className="hidden h-full xl:flex flex-col gap-y-[7px] pr-[137px]">
           <Image
             src="/icons/website.svg"
             alt="website"

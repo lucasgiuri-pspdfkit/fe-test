@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Text, { availableTextTypes } from "../text/text";
 
-type InputProps = {
+export type InputProps = {
   placeholder?: string;
   label?: string;
   value: string;

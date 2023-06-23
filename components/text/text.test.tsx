@@ -1,9 +1,6 @@
 import Text, { availableTextTypes } from "./text";
 import { render } from "@testing-library/react";
-// Types
-import type { AvailableTextTypes } from "./text";
 
-type A = keyof AvailableTextTypes;
 describe("Text", () => {
   const keys = Object.keys(availableTextTypes);
   keys.forEach((type) => {

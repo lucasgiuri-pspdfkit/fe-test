@@ -1,3 +1,15 @@
+export type ListItem = {
+  id: string;
+  coverUrl?: string;
+  date: {
+    start: number;
+    end: number;
+  },
+  img: { src: string; alt: string; width?: number; height?: number };
+  title: string;
+  location: string;
+};
+
 export type Genres = {
   name: string;
 };
@@ -34,11 +46,4 @@ export type EventData = {
       name: string;
     };
   };
-};
-
-export type ListItem = {
-  id: string;
-  img: { src: string; alt: string; width?: number; height?: number };
-  title: string;
-  location: string;
 };

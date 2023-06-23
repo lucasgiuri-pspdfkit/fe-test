@@ -22,6 +22,7 @@ import {
 } from "../commons/commons";
 // Types
 import type { UserData, ListItem } from "../types";
+import Modal from "../components/modal/modal";
 
 type PageProps = {
   data: UserData;
@@ -34,6 +35,10 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
   const { t } = useTranslation(FILE_LANG_NAME);
   const { state, dispatch } = useContext(StoreUsersContext);
   const [isFollowed, setIsFollowed] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [eventSelected, setEventSelected] = useState<ListItem | undefined>(
+    undefined
+  );
 
   const { id, name, description, coverUrl, recordLabel, musicGenres } = state;
 
@@ -44,13 +49,22 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
   }, [data, id, dispatch]);
 
   const handleEdit = () => {
-    router.push("/edit/asd");
+    router.push("/edit/tini");
+  };
+
+  const handleOpenModal = (id: string) => {
+    setIsModalOpen(true);
+    setEventSelected(events.find((event) => event.id === id));
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
     <>
       <div
-        className="absolute top-0 bg-cover bg-center left-0 bg-no-repeat w-screen h-screen"
+        className="absolute top-0 bg-cover bg-center left-0 bg-no-repeat w-screen h-[600px]"
         style={{
           backgroundImage: `url("${coverUrl}?w=28&blur=auto&fm=auto&q=auto")`,
         }}
@@ -103,8 +117,12 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
               isBold
             />
           </div>
-          <List type={availableListTypes.column} items={events} />
-          <div className="hidden lg:block mb-9">
+          <List
+            type={availableListTypes.column}
+            items={events}
+            onClick={handleOpenModal}
+          />
+          <div className="hidden lg:block mb-9 pt-4">
             <Text
               text={t("see-more-upcoming-events")}
               type={availableTextTypes.span}
@@ -114,8 +132,10 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
             <Text text={t("bio")} type={availableTextTypes.h3} isBold />
           </div>
           <div className="flex flex-col lg:flex-row gap-y-10 lg:gap-y-0 lg:gap-x-14">
-            <Text type={availableTextTypes.p} text={description} />
-            <div className="flex flex-col basis-1/4 shrink-0  gap-y-5">
+            <div className="basis-3/4">
+              <Text type={availableTextTypes.p} text={description} />
+            </div>
+            <div className="flex flex-col basis-1/4 shrink-0 gap-y-5">
               <div className="flex flex-col gap-y-3.5">
                 <Image
                   src="/icons/circle.svg"
@@ -131,9 +151,16 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
           <div className="pb-9 py-[103px]">
             <Text text={t("past-events")} type={availableTextTypes.h3} isBold />
           </div>
-          <List type={availableListTypes.row} items={pastEvents} />
+          <List
+            type={availableListTypes.row}
+            items={pastEvents}
+            onClick={handleOpenModal}
+          />
         </div>
       </div>
+      {isModalOpen && eventSelected && (
+        <Modal event={eventSelected} onClose={handleCloseModal} />
+      )}
     </>
   );
 };

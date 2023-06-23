@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-type TextareaProps = {
+export type TextareaProps = {
   placeholder: string;
   value: string;
   onChange: (value: string) => void;

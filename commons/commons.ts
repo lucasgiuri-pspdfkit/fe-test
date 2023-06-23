@@ -19,6 +19,7 @@ export const convertEvents = (events: EventData[]): ListItem[] => {
       id,
       title: name,
       location: venue.city.name,
+      coverUrl: venue.coverUrl,
       date: {
         start: startingTime,
         end: endingTime,

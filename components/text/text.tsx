@@ -14,7 +14,7 @@ export const availableTextTypes = {
 
 export type AvailableTextTypes = typeof availableTextTypes;
 
-type TextProps = {
+export type TextProps = {
   id?: string;
   isWhite?: boolean;
   isBold?: boolean;
@@ -33,7 +33,7 @@ const Text = ({ type, id, text, isBold, isWhite }: TextProps): ReactElement => {
     case availableTextTypes.h1:
       return (
         <h1
-          className={`text-4xl
+          className={`text-[32px]
           ${isBold ? "font-avenirHeavy font-black" : ""}
           ${isWhite ? "text-white" : "text-gray-500"}`}
         >

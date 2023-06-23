@@ -4,6 +4,7 @@ import Text, { availableTextTypes } from "../text/text";
 import Image from "../image/image";
 // Types
 import type { ListItem } from "../../types";
+import Button from "../button/button";
 
 export const availableListTypes = {
   row: "row",
@@ -12,9 +13,10 @@ export const availableListTypes = {
 
 type AvailableListTypes = typeof availableListTypes;
 
-type ListProps = {
+export type ListProps = {
   type: keyof AvailableListTypes;
   items: ListItem[];
+  onClick: (id: string) => void;
 };
 
 /**
@@ -22,7 +24,7 @@ type ListProps = {
  * Renders a list of items with their information.
  * @param {ListProps} props - The props for the List component.
  */
-const List = ({ type, items }: ListProps) => {
+const List = ({ type, items, onClick }: ListProps) => {
   return (
     <ul
       className={`w-full h-80 lg:h-full flex ${
@@ -36,7 +38,8 @@ const List = ({ type, items }: ListProps) => {
         return (
           <li
             key={id}
-            className={`${
+            onClick={() => onClick(id)}
+            className={`cursor-pointer ${
               type === availableListTypes.row ? "w-[468px] shrink-0" : "w-full"
             } py-3`}
           >

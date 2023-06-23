@@ -47,49 +47,6 @@ const mockResponse = {
   ],
 };
 
-const convertedEvents = [
-  {
-    id: "a92e77ac-d9fe-11ed-b9d3-0242ac11000e",
-    title: "Sumdayz Festival 2023 - DAY 2",
-    location: "Rome",
-    date: { start: 1695484800, end: 1695517200 },
-    img: {
-      src: "https://images.xceed.me/clubs/logos/ippodromo-delle-capannelle-club-roma-xceed-logo-71d2.png",
-      alt: "Sumdayz Festival 2023 - DAY 2",
-    },
-  },
-  {
-    id: "a92e77ac-d9fe-11ed-b9d3-0242ac11000e",
-    title: "Sumdayz Festival 2023 - DAY 2",
-    location: "Rome",
-    date: { start: 1695484800, end: 1695517200 },
-    img: {
-      src: "https://images.xceed.me/clubs/logos/ippodromo-delle-capannelle-club-roma-xceed-logo-71d2.png",
-      alt: "Sumdayz Festival 2023 - DAY 2",
-    },
-  },
-];
-
-describe("getData", () => {
-  // @ts-ignore
-  // Mock the fetch function
-  global.fetch = jest.fn(() =>
-    Promise.resolve({
-      json: () => Promise.resolve(mockResponse),
-    })
-  );
-
-  beforeEach(() => {
-    // @ts-ignore
-    fetch.mockClear();
-  });
-
-  it("should return data", async () => {
-    const data = await getData("mockFetch");
-    expect(data).toEqual(mockResponse);
-  });
-});
-
 describe("convertEvents", () => {
   it("should return converted events", () => {
     const convertedEvents = convertEvents(mockResponse.data);

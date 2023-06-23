@@ -27,7 +27,7 @@ export type ButtonProps = {
   variant?: keyof AvailableButtonVariants;
   isSelected?: boolean;
   isDisabled?: boolean;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({
@@ -37,7 +37,7 @@ const Button = ({
   type = availableButtonTypes.button,
   isDisabled,
   isSelected,
-  onClick,
+  onClick = () => {},
 }: ButtonProps) => {
   let classes = "";
 

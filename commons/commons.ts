@@ -1,3 +1,4 @@
+import axios, { AxiosResponse } from "axios";
 // Types
 import { EventData, ListItem } from "../types";
 
@@ -6,9 +7,14 @@ export const PATHS = ["tini"];
 export const FILE_LANG_NAME = "common";
 
 export const getData = async (url: string) => {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
+  try {
+    const response: AxiosResponse = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    // Handle the error appropriately, such as logging or displaying a friendly error message
+    console.error("Error fetching data:", error);
+    throw new Error("Failed to fetch data");
+  }
 };
 
 export const convertEvents = (events: EventData[]): ListItem[] => {

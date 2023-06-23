@@ -116,6 +116,10 @@ describe("List", () => {
           width: 100,
           height: 100,
         },
+        date: {
+          start: 123456789,
+          end: 123456789,
+        },
         title: "Title 1",
         location: "Location 1",
       },
@@ -127,16 +131,18 @@ describe("List", () => {
           width: 100,
           height: 100,
         },
+        date: {
+          start: 123456789,
+          end: 123456789,
+        },
         title: "Title 2",
         location: "Location 2",
       },
     ];
     const onClickMock = jest.fn();
-    const { getByText } = render(
-      <List type="row" items={mockItems} onClick={onClickMock} />
-    );
+    render(<List type="row" items={mockItems} onClick={onClickMock} />);
 
-    const listItem = getByText("Title 1");
+    const listItem = screen.getByText("Title 1");
     fireEvent.click(listItem);
 
     expect(onClickMock).toHaveBeenCalledWith("1");

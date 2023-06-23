@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Layout from "./Layout";
+import Layout from "./layout";
 
 describe("Layout", () => {
   it("matches the snapshot", () => {

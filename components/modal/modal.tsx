@@ -29,6 +29,7 @@ const Modal = ({ event, onClose }: ModalProps) => {
   };
 
   const handleClickOutside = (event: React.MouseEvent<HTMLDivElement>) => {
+    // @ts-ignore 
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       onClose();
     }

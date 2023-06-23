@@ -21,6 +21,7 @@ const Template: Story<ModalProps> = (args) => <Modal {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   event: {
+    id: "1",
     img: {
       src: "https://avatars.githubusercontent.com/u/1?v=4",
       alt: "Event Image",

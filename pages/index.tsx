@@ -25,12 +25,91 @@ import {
 import Modal from "../components/modal/modal";
 // Types
 import type { UserData, ListItem } from "../types";
+import Carousel from "../commons/carousel/carousel";
 
 type PageProps = {
   data: UserData;
   events: ListItem[];
   pastEvents: ListItem[];
 };
+
+const mockItems = [
+  {
+    id: "1",
+    img: {
+      src: "https://avatars.githubusercontent.com/u/1?v=4",
+      alt: "Image 1",
+      width: 100,
+      height: 100,
+    },
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
+    title: "Title 1",
+    location: "Location 1",
+  },
+  {
+    id: "2",
+    img: {
+      src: "https://avatars.githubusercontent.com/u/1?v=4",
+      alt: "Image 2",
+      width: 100,
+      height: 100,
+    },
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
+    title: "Title 2",
+    location: "Location 2",
+  },
+  {
+    id: "3",
+    img: {
+      src: "https://avatars.githubusercontent.com/u/1?v=4",
+      alt: "Image 2",
+      width: 100,
+      height: 100,
+    },
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
+    title: "Title 2",
+    location: "Location 2",
+  },
+  {
+    id: "4",
+    img: {
+      src: "https://avatars.githubusercontent.com/u/1?v=4",
+      alt: "Image 2",
+      width: 100,
+      height: 100,
+    },
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
+    title: "Title 2",
+    location: "Location 2",
+  },
+  {
+    id: "5",
+    img: {
+      src: "https://avatars.githubusercontent.com/u/1?v=4",
+      alt: "Image 2",
+      width: 100,
+      height: 100,
+    },
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
+    title: "Title 2",
+    location: "Location 2",
+  },
+];
 
 const Home = ({ data, events, pastEvents }: PageProps) => {
   const router = useRouter();
@@ -55,9 +134,11 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
     router.push("/edit/tini");
   };
 
-  const handleOpenModal = (id: string) => {
+  const handleOpenModal = (id: string, isPastEvent?: boolean) => {
+    console.log("id", id);
     setIsModalOpen(true);
-    setEventSelected(events.find((event) => event.id === id));
+    const eventToFind = isPastEvent ? pastEvents : events;
+    setEventSelected(eventToFind.find((event) => event.id === id));
   };
 
   const handleCloseModal = () => {
@@ -72,7 +153,7 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
           backgroundImage: `url("${coverUrl}?w=28&blur=auto&fm=auto&q=auto")`,
         }}
       />
-      <div className="max-w-[1272px] flex flex-col lg:flex-row items-center gap-x-[61px] mt-10 lg:mt-[120px] mb-0 mx-auto relative z-20">
+      <div className="max-w-[1272px] flex flex-col xl:flex-row items-center gap-x-[61px] mt-10 xl:mt-[120px] mb-0 mx-auto relative z-20">
         <div className="flex lg:shrink-0">
           <Image
             src={coverUrl}
@@ -82,10 +163,10 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
             roundedSize={availableRoundedSizes["3xl"]}
           />
         </div>
-        <div className="flex flex-col w-full px-10 lg:px-0 xl:pb-0 pb-10">
+        <div className="flex flex-col w-full px-10 xl:px-0 xl:pb-0 pb-10">
           <div className="h-12" />
           <Card name={name} musicGenres={musicGenres} />
-          <div className="fixed w-full left-0 bottom-0 bg-gray-500 pt-4 pb-4 flex justify-center items-center gap-x-10 lg:relative lg:justify-start lg:w-auto lg:pb-0 lg:pt-10 lg:gap-x-6 lg:bg-transparent">
+          <div className="fixed w-full left-0 bottom-0 bg-gray-500 pt-4 pb-4 flex justify-center items-center gap-x-10 xl:relative xl:justify-start xl:w-auto xl:pb-0 xl:pt-10 xl:gap-x-6 xl:bg-transparent">
             <Button
               onClick={() => setIsFollowed((prevState) => !prevState)}
               variant={availableVariants.tertiary}
@@ -111,8 +192,8 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
           </div>
         </div>
       </div>
-      <div className="w-full relative bg-white rounded-2xl">
-        <div className="max-w-[1172px] lg:-mt-[54px] mb-0 mx-auto pt-[107px] pb-[66ox] px-10">
+      <div className="w-full bg-white rounded-2xl px-10 xl:px-0">
+        <div className="max-w-[1172px] lg:-mt-[54px] mb-0 mx-auto pt-[107px] px-10">
           <div className="pb-9">
             <Text
               text={t("upcoming-gigs")}
@@ -131,34 +212,51 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
               type={availableTextTypes.span}
             />
           </div>
-          <div className="py-9">
-            <Text text={t("bio")} type={availableTextTypes.h3} isBold />
-          </div>
-          <div className="flex flex-col lg:flex-row gap-y-10 lg:gap-y-0 lg:gap-x-14">
-            <div className="basis-3/4">
-              <Text type={availableTextTypes.p} text={description} />
+        </div>
+        <div className="w-full rounded-2xl bg-gray-50 pb-[66px] px-10">
+          <div className="max-w-[1172px] mx-auto">
+            <div className="py-9">
+              <Text text={t("bio")} type={availableTextTypes.h3} isBold />
             </div>
-            <div className="flex flex-col basis-1/4 shrink-0 gap-y-5">
-              <div className="flex flex-col gap-y-3.5">
-                <Image
-                  src="/icons/circle.svg"
-                  alt={recordLabel}
-                  width={16}
-                  height={16}
-                />
-                <Text type={availableTextTypes.p} text={recordLabel} isBold />
+            <div className="flex flex-col lg:flex-row gap-y-10 lg:gap-y-0 lg:gap-x-14">
+              <div className="basis-3/4">
+                <Text type={availableTextTypes.p} text={description} />
               </div>
-              <Text type={availableTextTypes.smallP} text={t("labels")} />
+              <div className="flex flex-col basis-1/4 shrink-0 gap-y-5">
+                <div className="flex flex-col gap-y-3.5">
+                  <Image
+                    src="/icons/circle.svg"
+                    alt={recordLabel}
+                    width={16}
+                    height={16}
+                  />
+                  <Text type={availableTextTypes.p} text={recordLabel} isBold />
+                </div>
+                <Text type={availableTextTypes.smallP} text={t("labels")} />
+              </div>
+            </div>
+            <div className="pt-[103px] flex flex-col gap-y-6">
+              <Text
+                text={t("past-events")}
+                type={availableTextTypes.h3}
+                isBold
+              />
+              {device === "xl" ? (
+                <Carousel
+                  key="carousel"
+                  items={mockItems}
+                  onClick={(id) => handleOpenModal(id, true)}
+                />
+              ) : (
+                <List
+                  key="list"
+                  type={availableListTypes.row}
+                  items={pastEvents}
+                  onClick={(id) => handleOpenModal(id, true)}
+                />
+              )}
             </div>
           </div>
-          <div className="pb-9 py-[103px]">
-            <Text text={t("past-events")} type={availableTextTypes.h3} isBold />
-          </div>
-          <List
-            type={availableListTypes.row}
-            items={pastEvents}
-            onClick={handleOpenModal}
-          />
         </div>
       </div>
       {isModalOpen && eventSelected && (

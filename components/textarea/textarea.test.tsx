@@ -22,4 +22,26 @@ describe("Textarea", () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  test("calls onChange with updated value", () => {
+    const mockOnChange = jest.fn();
+    const placeholder = "Enter text";
+    const initialValue = "Initial value";
+
+    render(
+      <Textarea
+        placeholder={placeholder}
+        value={initialValue}
+        onChange={mockOnChange}
+      />
+    );
+
+    const textarea = screen.getByPlaceholderText(placeholder);
+    const updatedValue = "Updated value";
+
+    fireEvent.change(textarea, { target: { value: updatedValue } });
+
+    expect(mockOnChange).toHaveBeenCalledTimes(1);
+    expect(mockOnChange).toHaveBeenCalledWith(updatedValue);
+  });
 });

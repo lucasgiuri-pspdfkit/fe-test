@@ -1,7 +1,7 @@
 import React from "react";
 // Components
 import Text, { availableTextTypes } from "../text/text";
-import Image from "../image/image";
+import Image, { availableRoundedSizes } from "../image/image";
 // Types
 import type { ListItem } from "../../types";
 import Button from "../button/button";
@@ -39,7 +39,7 @@ const List = ({ type, items, onClick }: ListProps) => {
           <li
             key={id}
             onClick={() => onClick(id)}
-            className={`cursor-pointer ${
+            className={`cursor-pointer mb-3 pt-0 pb-0 shadow-md-bottom rounded-2xl ${
               type === availableListTypes.row ? "w-[468px] shrink-0" : "w-full"
             } py-3`}
           >
@@ -49,7 +49,7 @@ const List = ({ type, items, onClick }: ListProps) => {
                 alt={alt}
                 width={width}
                 height={height}
-                roundedSize="2xl"
+                roundedSize={availableRoundedSizes["2xl"]}
               />
               <div className="pl-[21px]">
                 <Text isBold type={availableTextTypes.h4} text={title} />

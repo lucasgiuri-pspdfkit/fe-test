@@ -65,7 +65,12 @@ const Edit = ({ data }: { data: UserData }) => {
           <div className="flex flex-col mb-[35px]">
             <div className="flex items-center gap-x-4">
               <Text type={availableTextTypes.h1} text={payload.name} />
-              <Image src="/icons/edit.svg" width={26} height={26} alt="edit" />
+              <Image
+                src="/icons/edit-dark.svg"
+                width={26}
+                height={26}
+                alt="edit"
+              />
             </div>
             <Text
               type={availableTextTypes.span}

@@ -25,91 +25,13 @@ import {
 import Modal from "../components/modal/modal";
 // Types
 import type { UserData, ListItem } from "../types";
-import Carousel from "../commons/carousel/carousel";
+import Carousel from "../components/carousel/carousel";
 
 type PageProps = {
   data: UserData;
   events: ListItem[];
   pastEvents: ListItem[];
 };
-
-const mockItems = [
-  {
-    id: "1",
-    img: {
-      src: "https://avatars.githubusercontent.com/u/1?v=4",
-      alt: "Image 1",
-      width: 100,
-      height: 100,
-    },
-    date: {
-      start: 123456789,
-      end: 123456789,
-    },
-    title: "Title 1",
-    location: "Location 1",
-  },
-  {
-    id: "2",
-    img: {
-      src: "https://avatars.githubusercontent.com/u/1?v=4",
-      alt: "Image 2",
-      width: 100,
-      height: 100,
-    },
-    date: {
-      start: 123456789,
-      end: 123456789,
-    },
-    title: "Title 2",
-    location: "Location 2",
-  },
-  {
-    id: "3",
-    img: {
-      src: "https://avatars.githubusercontent.com/u/1?v=4",
-      alt: "Image 2",
-      width: 100,
-      height: 100,
-    },
-    date: {
-      start: 123456789,
-      end: 123456789,
-    },
-    title: "Title 2",
-    location: "Location 2",
-  },
-  {
-    id: "4",
-    img: {
-      src: "https://avatars.githubusercontent.com/u/1?v=4",
-      alt: "Image 2",
-      width: 100,
-      height: 100,
-    },
-    date: {
-      start: 123456789,
-      end: 123456789,
-    },
-    title: "Title 2",
-    location: "Location 2",
-  },
-  {
-    id: "5",
-    img: {
-      src: "https://avatars.githubusercontent.com/u/1?v=4",
-      alt: "Image 2",
-      width: 100,
-      height: 100,
-    },
-    date: {
-      start: 123456789,
-      end: 123456789,
-    },
-    title: "Title 2",
-    location: "Location 2",
-  },
-];
 
 const Home = ({ data, events, pastEvents }: PageProps) => {
   const router = useRouter();
@@ -135,7 +57,6 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
   };
 
   const handleOpenModal = (id: string, isPastEvent?: boolean) => {
-    console.log("id", id);
     setIsModalOpen(true);
     const eventToFind = isPastEvent ? pastEvents : events;
     setEventSelected(eventToFind.find((event) => event.id === id));
@@ -192,8 +113,8 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-white rounded-2xl px-10 xl:px-0">
-        <div className="max-w-[1172px] lg:-mt-[54px] mb-0 mx-auto pt-[107px] px-10">
+      <div className="w-full bg-white rounded-2xl px-10 xl:px-0 relative">
+        <div className="max-w-[1172px] xl:-mt-[54px] mb-0 mx-auto pt-[107px] px-10">
           <div className="pb-9">
             <Text
               text={t("upcoming-gigs")}
@@ -223,7 +144,7 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
                 <Text type={availableTextTypes.p} text={description} />
               </div>
               <div className="flex flex-col basis-1/4 shrink-0 gap-y-5">
-                <div className="flex flex-col gap-y-3.5">
+                <div className="flex flex-col gap-y-3.5" style={{ background: "red"}}>
                   <Image
                     src="/icons/circle.svg"
                     alt={recordLabel}
@@ -244,7 +165,7 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
               {device === "xl" ? (
                 <Carousel
                   key="carousel"
-                  items={mockItems}
+                  items={pastEvents}
                   onClick={(id) => handleOpenModal(id, true)}
                 />
               ) : (

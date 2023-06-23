@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 // Components
-import Image, { availableRoundedSizes } from "../../components/image/image";
-import Text, { availableTextTypes } from "../../components/text/text";
+import Image, { availableRoundedSizes } from "../image/image";
+import Text, { availableTextTypes } from "../text/text";
 // Types
 import type { ListItem } from "../../types";
-import Button from "../../components/button/button";
+import Button from "../button/button";
 
-type CarouselProps = {
+export type CarouselProps = {
   items: ListItem[];
   onClick: (id: string) => void;
 };

@@ -144,7 +144,7 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
                 <Text type={availableTextTypes.p} text={description} />
               </div>
               <div className="flex flex-col basis-1/4 shrink-0 gap-y-5">
-                <div className="flex flex-col gap-y-3.5" style={{ background: "red"}}>
+                <div className="flex flex-col gap-y-3.5">
                   <Image
                     src="/icons/circle.svg"
                     alt={recordLabel}

@@ -7,8 +7,6 @@ export type UserDataAction = {
   payload: UserData | { id: string };
 };
 
-export type UserDataState = UserData;
-
 export const usersReducer = (
   state: UserData,
   action: UserDataAction

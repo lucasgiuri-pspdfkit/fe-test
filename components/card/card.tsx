@@ -7,7 +7,7 @@ import type { Genres } from "../../types";
 
 type Card = {
   name: string;
-  musicGenres: Genres[];
+  musicGenres?: Genres[] | [];
 };
 
 /**
@@ -34,20 +34,22 @@ const Card = ({ name, musicGenres }: Card) => {
                   isWhite
                 />
               </div>
-              {musicGenres.map((genre, i) => (
-                <div key={genre.name} className="flex">
-                  <Text
-                    type={availableTextTypes.p}
-                    text={genre.name.toUpperCase()}
-                    isWhite
-                  />
-                  {i !== musicGenres.length - 1 && (
-                    <div className="px-1.5">
-                      <Text type={availableTextTypes.p} text="-" isWhite />
-                    </div>
-                  )}
-                </div>
-              ))}
+              {musicGenres &&
+                musicGenres.length > 0 &&
+                musicGenres.map((genre, i) => (
+                  <div key={genre.name} className="flex">
+                    <Text
+                      type={availableTextTypes.p}
+                      text={genre.name.toUpperCase()}
+                      isWhite
+                    />
+                    {i !== musicGenres.length - 1 && (
+                      <div className="px-1.5">
+                        <Text type={availableTextTypes.p} text="-" isWhite />
+                      </div>
+                    )}
+                  </div>
+                ))}
             </div>
             <Text type={availableTextTypes.h1} text={name} isBold isWhite />
           </div>

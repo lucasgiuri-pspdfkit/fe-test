@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea Snapshot with isRequired 1`] = `
+<div>
+  <textarea
+    class="w-full h-[161px] p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
+    placeholder=""
+    required=""
+  />
+</div>
+`;

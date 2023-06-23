@@ -12,6 +12,14 @@ describe("Input", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it("Snapshot with isRequired", () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <Input placeholder="" value="" onChange={onChange} isRequired />
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   availableTypes.forEach((type) => {
     it(`Snapshot with type ${type}`, () => {
       const onChange = jest.fn();

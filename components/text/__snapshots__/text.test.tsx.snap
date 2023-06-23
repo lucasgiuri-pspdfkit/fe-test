@@ -3,7 +3,7 @@
 exports[`Text Snapshot with type h1 1`] = `
 <div>
   <h1
-    class="text-4xl
+    class="text-[32px]
           
           text-gray-500"
   >
@@ -15,7 +15,7 @@ exports[`Text Snapshot with type h1 1`] = `
 exports[`Text Snapshot with type h1 and custom id 1`] = `
 <div>
   <h1
-    class="text-4xl
+    class="text-[32px]
           
           text-gray-500"
   >
@@ -27,7 +27,7 @@ exports[`Text Snapshot with type h1 and custom id 1`] = `
 exports[`Text Snapshot with type h1 and isBold true 1`] = `
 <div>
   <h1
-    class="text-4xl
+    class="text-[32px]
           font-avenirHeavy font-black
           text-gray-500"
   >
@@ -39,7 +39,7 @@ exports[`Text Snapshot with type h1 and isBold true 1`] = `
 exports[`Text Snapshot with type h1 and isWhite true 1`] = `
 <div>
   <h1
-    class="text-4xl
+    class="text-[32px]
           
           text-white"
   >

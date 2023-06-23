@@ -2,18 +2,19 @@ import React, { createContext, useReducer, ReactNode } from "react";
 // Reducers
 import { usersReducer } from "./reducers";
 // Types
-import type { UserDataState, UserDataAction } from "./reducers";
+import type { UserDataAction } from "./reducers";
+import type { UserData } from "../types";
 
 type StoreProviderProps = {
   children: JSX.Element;
 };
 
 type UsersStateAndDispatch = {
-  state: UserDataState;
+  state: UserData;
   dispatch: React.Dispatch<UserDataAction>;
 };
 
-const initialState: UserDataState = {
+const initialState: UserData = {
   id: "",
   slug: "",
   coverUrl: "",

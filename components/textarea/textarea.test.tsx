@@ -14,4 +14,12 @@ describe("Textarea", () => {
     const textarea = screen.getByPlaceholderText("Enter text");
     expect(textarea).toBeInTheDocument();
   });
+
+  it("Snapshot with isRequired", () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <Textarea placeholder="" value="" onChange={onChange} isRequired />
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

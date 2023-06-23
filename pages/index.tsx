@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// Hooks
 import { useRouter } from "next/navigation";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import useScreenSize from "../hooks/useScreenSize";
 // Store
 import { StoreUsersContext } from "../store/providers";
 import { ADD_USER } from "../store/actions";
@@ -20,9 +22,9 @@ import {
   FILE_LANG_NAME,
   API_URL,
 } from "../commons/commons";
+import Modal from "../components/modal/modal";
 // Types
 import type { UserData, ListItem } from "../types";
-import Modal from "../components/modal/modal";
 
 type PageProps = {
   data: UserData;
@@ -32,6 +34,7 @@ type PageProps = {
 
 const Home = ({ data, events, pastEvents }: PageProps) => {
   const router = useRouter();
+  const { device } = useScreenSize();
   const { t } = useTranslation(FILE_LANG_NAME);
   const { state, dispatch } = useContext(StoreUsersContext);
   const [isFollowed, setIsFollowed] = useState(false);
@@ -74,12 +77,12 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
           <Image
             src={coverUrl}
             alt={name}
-            width={400}
-            height={400}
+            width={device === "xl" ? 400 : 300}
+            height={device === "xl" ? 400 : 300}
             roundedSize={availableRoundedSizes["3xl"]}
           />
         </div>
-        <div className="flex flex-col w-full px-10 lg:px-0">
+        <div className="flex flex-col w-full px-10 lg:px-0 xl:pb-0 pb-10">
           <div className="h-12" />
           <Card name={name} musicGenres={musicGenres} />
           <div className="fixed w-full left-0 bottom-0 bg-gray-500 pt-4 pb-4 flex justify-center items-center gap-x-10 lg:relative lg:justify-start lg:w-auto lg:pb-0 lg:pt-10 lg:gap-x-6 lg:bg-transparent">

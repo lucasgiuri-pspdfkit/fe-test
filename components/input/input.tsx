@@ -4,6 +4,7 @@ import Text, { availableTextTypes } from "../text/text";
 export type InputProps = {
   placeholder?: string;
   label?: string;
+  isRequired?: boolean;
   value: string;
   onChange: (value: string) => void;
 };
@@ -13,7 +14,13 @@ export type InputProps = {
  * @param {InputProps} props - The props for the input component.
  */
 
-const Input = ({ placeholder, label, value, onChange }: InputProps) => {
+const Input = ({
+  placeholder,
+  label,
+  isRequired = false,
+  value,
+  onChange,
+}: InputProps) => {
   const [defaultValue, setDefaultValue] = useState(value);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +35,7 @@ const Input = ({ placeholder, label, value, onChange }: InputProps) => {
         <Text text={label} type={availableTextTypes.subLabel} />
         <input
           type="text"
+          required={isRequired}
           className="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
           placeholder={placeholder}
           defaultValue={defaultValue}
@@ -39,6 +47,7 @@ const Input = ({ placeholder, label, value, onChange }: InputProps) => {
   return (
     <input
       type="text"
+      required={isRequired}
       className="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
       placeholder={placeholder}
       defaultValue={defaultValue}

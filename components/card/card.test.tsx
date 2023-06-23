@@ -15,7 +15,16 @@ describe("Card", () => {
     const { container } = render(
       <Card name="test" musicGenres={musicGenres} />
     );
+    expect(container).toMatchSnapshot();
+  });
 
+  it("render with no musicGenres", () => {
+    const { container } = render(<Card name="test" />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it("render with empty musicGenres", () => {
+    const { container } = render(<Card name="test" musicGenres={[]} />);
     expect(container).toMatchSnapshot();
   });
 });

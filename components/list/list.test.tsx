@@ -1,11 +1,15 @@
 import List, { availableListTypes } from "./list";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, screen, render } from "@testing-library/react";
 
 const arrayWithOneItem = [
   {
     id: "1",
     title: "example",
     location: "example",
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
     img: {
       src: "https://avatars.githubusercontent.com/u/1?v=4",
       alt: "example",
@@ -20,6 +24,10 @@ const arrayWithFiveItems = [
     id: "1",
     title: "example",
     location: "example",
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
     img: {
       src: "https://avatars.githubusercontent.com/u/1?v=4",
       alt: "example",
@@ -31,6 +39,10 @@ const arrayWithFiveItems = [
     id: "2",
     title: "example2",
     location: "example2",
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
     img: {
       src: "https://avatars.githubusercontent.com/u/2?v=4",
       alt: "example2",
@@ -42,6 +54,10 @@ const arrayWithFiveItems = [
     id: "3",
     title: "example3",
     location: "example3",
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
     img: {
       src: "https://avatars.githubusercontent.com/u/3?v=4",
       alt: "example3",
@@ -53,6 +69,10 @@ const arrayWithFiveItems = [
     id: "4",
     title: "example4",
     location: "example4",
+    date: {
+      start: 123456789,
+      end: 123456789,
+    },
     img: {
       src: "https://avatars.githubusercontent.com/u/4?v=4",
       alt: "example4",
@@ -75,23 +95,51 @@ const arrayWithFiveItems = [
 
 describe("List", () => {
   it("Snapshot renders with just one item and row", () => {
-    const view = render(
-      <List type={availableListTypes.row} items={arrayWithOneItem} />
-    );
-    expect(view).toMatchSnapshot();
-  });
-
-  it("onClick is called when clicking on an item", () => {
     const onClick = jest.fn();
-    const { getByText } = render(
+    const view = render(
       <List
         type={availableListTypes.row}
         items={arrayWithOneItem}
         onClick={onClick}
       />
     );
-    fireEvent.click(getByText("example"));
-    expect(onClick).toHaveBeenCalled();
+    expect(view).toMatchSnapshot();
+  });
+
+  it("onClick is called when clicking on an item", () => {
+    const mockItems = [
+      {
+        id: "1",
+        img: {
+          src: "https://avatars.githubusercontent.com/u/1?v=4",
+          alt: "Image 1",
+          width: 100,
+          height: 100,
+        },
+        title: "Title 1",
+        location: "Location 1",
+      },
+      {
+        id: "2",
+        img: {
+          src: "https://avatars.githubusercontent.com/u/1?v=4",
+          alt: "Image 2",
+          width: 100,
+          height: 100,
+        },
+        title: "Title 2",
+        location: "Location 2",
+      },
+    ];
+    const onClickMock = jest.fn();
+    const { getByText } = render(
+      <List type="row" items={mockItems} onClick={onClickMock} />
+    );
+
+    const listItem = getByText("Title 1");
+    fireEvent.click(listItem);
+
+    expect(onClickMock).toHaveBeenCalledWith("1");
   });
 
   it("Snapshot renders with five items and row", () => {
@@ -102,15 +150,25 @@ describe("List", () => {
   });
 
   it("Snapshot renders with just one item and column", () => {
+    const onClick = jest.fn();
     const view = render(
-      <List type={availableListTypes.column} items={arrayWithOneItem} />
+      <List
+        type={availableListTypes.column}
+        items={arrayWithOneItem}
+        onClick={onClick}
+      />
     );
     expect(view).toMatchSnapshot();
   });
 
   it("Snapshot renders with five items and column", () => {
+    const onClick = jest.fn();
     const view = render(
-      <List type={availableListTypes.column} items={arrayWithFiveItems} />
+      <List
+        type={availableListTypes.column}
+        items={arrayWithFiveItems}
+        onClick={onClick}
+      />
     );
     expect(view).toMatchSnapshot();
   });

@@ -32,7 +32,13 @@ const Edit = ({ data }: { data: UserData }) => {
     JSON.parse(JSON.stringify(newState))
   );
 
-  const handleChange = (id: string, newValue: string) => {
+  const handleMusicGenresValidation = (value: string, label: string) => {
+    const newValues = value.split(",").map((v) => v.trim());
+    const result = newValues.map((name) => ({ name }));
+    handleChange(label, result);
+  };
+
+  const handleChange = (id: string, newValue: string | { name: string }[]) => {
     setPayload((prevState) => ({
       ...prevState,
       [id]: newValue,
@@ -45,7 +51,7 @@ const Edit = ({ data }: { data: UserData }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch({ type: UPDATE_USER, payload });
+    dispatch({ type: ADD_USER, payload });
     router.push("/");
   };
 
@@ -80,52 +86,65 @@ const Edit = ({ data }: { data: UserData }) => {
         <div className="flex flex-col gap-y-4 mb-[31px]">
           <Text type={availableTextTypes.label} text={t("biography")} />
           <Textarea
+            isRequired
             placeholder={t("give-your-event-description-title")}
             onChange={(v) => handleChange("description", v)}
             value={payload.description}
           />
         </div>
         <div className="flex flex-col gap-y-4 mb-[31px]">
-          <Text type={availableTextTypes.label} text={t("music")} />
+          <div className="flex items-center gap-x-2">
+            <Text type={availableTextTypes.label} text={t("music")} />
+            <Text type={availableTextTypes.span} text={`(${t("optional")})`} />
+          </div>
           <Input
             placeholder={t("select-up-3-music-genres")}
-            onChange={(v) => handleChange("music", v)}
+            onChange={(v) => handleMusicGenresValidation(v, "musicGenres")}
             value={music}
           />
         </div>
         <div className="flex flex-col gap-y-4 mb-[31px]">
-          <Text type={availableTextTypes.label} text={t("label")} />
+          <div className="flex items-center gap-x-2">
+            <Text type={availableTextTypes.label} text={t("label")} />
+            <Text type={availableTextTypes.span} text={`(${t("optional")})`} />
+          </div>
           <Input
             placeholder={t("select-or-add-labels")}
-            onChange={(v) => handleChange("label", v)}
+            onChange={(v) => handleChange("recordLabel", v)}
             value={payload.recordLabel}
           />
         </div>
         <div className="flex flex-col gap-y-4 mb-[31px]">
-          <Text type={availableTextTypes.label} text={t("website")} />
+          <div className="flex items-center gap-x-2">
+            <Text type={availableTextTypes.label} text={t("website")} />
+            <Text type={availableTextTypes.span} text={`(${t("optional")})`} />
+          </div>
           <Input
             placeholder={t("insert-url-here")}
             onChange={(v) => handleChange("website", v)}
-            value={payload.website}
+            value={payload.website || ""}
           />
         </div>
         <div className="flex flex-col gap-y-4 mb-[187px]">
-          <Text type={availableTextTypes.label} text={t("social")} />
+          <div className="flex items-center gap-x-2">
+            <Text type={availableTextTypes.label} text={t("social")} />
+            <Text type={availableTextTypes.span} text={`(${t("optional")})`} />
+          </div>
           <div className="flex flex-col lg:flex-row items-center gap-y-[27px] gap-x-0 lg:gap-x-[27px] lg:gap-y-0">
             <Input
               label={t("spotify")}
               onChange={(v) => handleChange("spotify", v)}
-              value={payload.social}
+              value={payload.spotify || ""}
             />
             <Input
               label={t("mixcloud")}
               onChange={(v) => handleChange("mixcloud", v)}
-              value={payload.social}
+              value={payload.mixcloud || ""}
             />
             <Input
               label={t("soundcloud")}
               onChange={(v) => handleChange("soundcloud", v)}
-              value={payload.social}
+              value={payload.soundcloud || ""}
             />
           </div>
         </div>

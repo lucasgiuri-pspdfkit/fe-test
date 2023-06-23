@@ -11,6 +11,18 @@ exports[`Input Snapshot with empty placeholder and empty value 1`] = `
 </div>
 `;
 
+exports[`Input Snapshot with isRequired 1`] = `
+<div>
+  <input
+    class="w-full h-12 p-3 text-gray-500 border border-gray-200 placeholder-gray-200 focus:ring-0 outline-gray-500 rounded-md"
+    placeholder=""
+    required=""
+    type="text"
+    value=""
+  />
+</div>
+`;
+
 exports[`Input Snapshot with label 1`] = `
 <div>
   <div

@@ -78,7 +78,7 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
       <div className="max-w-[1272px] flex flex-col xl:flex-row items-center gap-x-[61px] mt-10 xl:mt-[120px] mb-0 mx-auto relative z-20">
         <div className="flex lg:shrink-0">
           <Image
-            src={coverUrl}
+            src={coverUrl || ""}
             alt={name}
             width={device === "xl" ? 400 : 300}
             height={device === "xl" ? 400 : 300}

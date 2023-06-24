@@ -24,6 +24,7 @@ const Card = ({ name, audioSrc, musicGenres }: CardProps) => {
 
   const handlePlayPause = () => {
     const audioElement = audioRef.current;
+    if (!audioElement) return;
     if (isPlaying) audioElement.pause();
     else audioElement.play();
     setIsPlaying(!isPlaying);

@@ -74,10 +74,10 @@ To run the tests, follow these steps:
 2. Run the tests: `npm run test`
 
 ## Things that can improve
+React-query: I decided to uninstall temporary this library, its amazing but using nextjs and getting the data from the building time and persist the data on the store had not to much sense for me to use it. Maybe if there is any case that need some cache specs for more pages, instead of using the store i can use react query.
 - PWA: applying next-pwa library user can download the website as an app, it could be an interesting point and in just minutes it can be solve but watching the screenshots were not "mobile first" approach so i think it could be a great option in that case.
 - Docker: I did not use docker config, I had no more time to do it and i think npm in this case works very easy as well so it was not very relevant in this case.
-- Make an api with express: This is completely feasible, in just one extra hour can be done. Taking in account i'm not a backend professional i thought i would do something not very we'll so that is the reason because i directly used the api as an external one.
-- Design: I had only the images so i based my design on that but would be amazing to have figma or similar because i have some problems with the colors. In addition i think the scrollbar should be hidden or put it outside of the box. Also the icons that i used are not the official ones.
+- Design: I have the feeling that my design is not perfect and there are some things that i can take a look in deep if i have some hours or days. Like counters on the inputs, the edit photo. etc.
 - E2E Test: This can be done using Playwright or Cypress but i like to split this as a separated repo, I think is better in case we have multiple teams, to not mix the things, in case someone QA expert wants to change something about tests, is better to have those in a separated repo and not do a big PR with no impact on the user.
 
 ## Contributing

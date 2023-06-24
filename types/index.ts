@@ -4,7 +4,7 @@ export type ListItem = {
   date: {
     start: number;
     end: number;
-  },
+  };
   img: { src: string; alt: string; width?: number; height?: number };
   title: string;
   location: string;
@@ -12,6 +12,11 @@ export type ListItem = {
 
 export type Genres = {
   name: string;
+};
+
+export type TrackData = {
+  name: string;
+  url: string;
 };
 
 export type UserData = {
@@ -26,6 +31,7 @@ export type UserData = {
   mixcloud?: string;
   spotify?: string;
   musicGenres?: Genres[] | [];
+  tracks?: TrackData[] | [];
 };
 
 export type EventData = {

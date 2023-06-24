@@ -1,29 +1,47 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 // Components
 import Text, { availableTextTypes } from "../text/text";
 import Image from "../image/image";
 // Types
 import type { Genres } from "../../types";
+import Button from "../button/button";
 
-type Card = {
+export type CardProps = {
   name: string;
   musicGenres?: Genres[] | [];
+  audioSrc?: string;
 };
 
 /**
  * Card component.
  * Renders a card element.
- * @param {Card} props - The props for the Card component.
+ * @param {CardProps} props - The props for the Card component.
  */
 
-const Card = ({ name, musicGenres }: Card) => {
+const Card = ({ name, audioSrc, musicGenres }: CardProps) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  const handlePlayPause = () => {
+    const audioElement = audioRef.current;
+    if (isPlaying) audioElement.pause();
+    else audioElement.play();
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <div className="flex flex-col">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-x-[31px]">
-          <div className="flex justify-center items-center rounded-full w-[72px] h-[72px] bg-gray-200">
-            <Image src="/icons/play.svg" alt="play" width={15} height={19} />
-          </div>
+          {audioSrc && (
+            <audio ref={audioRef} src={audioSrc} className="hidden" />
+          )}
+
+          <Button onClick={handlePlayPause}>
+            <div className="flex justify-center items-center rounded-full w-[72px] h-[72px] bg-gray-200">
+              <Image src="/icons/play.svg" alt="play" width={15} height={19} />
+            </div>
+          </Button>
           <div className="flex flex-col">
             <div className="hidden lg:flex">
               <div className="pr-4">

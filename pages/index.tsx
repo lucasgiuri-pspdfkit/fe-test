@@ -44,7 +44,8 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
     undefined
   );
 
-  const { id, name, description, coverUrl, recordLabel, musicGenres } = state;
+  const { id, name, description, coverUrl, recordLabel, musicGenres, tracks } =
+    state;
 
   useEffect(() => {
     if (!id) {
@@ -86,7 +87,11 @@ const Home = ({ data, events, pastEvents }: PageProps) => {
         </div>
         <div className="flex flex-col w-full px-10 xl:px-0 xl:pb-0 pb-10">
           <div className="h-12" />
-          <Card name={name} musicGenres={musicGenres} />
+          <Card
+            name={name}
+            musicGenres={musicGenres}
+            audioSrc={tracks && tracks[0].url}
+          />
           <div className="fixed w-full left-0 bottom-0 bg-gray-500 pt-4 pb-4 flex justify-center items-center gap-x-10 xl:relative xl:justify-start xl:w-auto xl:pb-0 xl:pt-10 xl:gap-x-6 xl:bg-transparent">
             <Button
               onClick={() => setIsFollowed((prevState) => !prevState)}
@@ -201,7 +206,7 @@ export const getStaticProps: GetStaticProps<{
 
   return {
     props: {
-      data: user.data,
+      data: user.data, // here it should use the useArtist hook
       events: convertEvents(events.data),
       pastEvents: convertEvents(pastEvents.data),
       ...(await serverSideTranslations(locale, [FILE_LANG_NAME])),

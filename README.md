@@ -57,7 +57,7 @@ The project follows the following directory structure:
 
 To run the application locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
+1. Clone the repository
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 4. Open your browser and visit [http://localhost:3000](http://localhost:3000)
